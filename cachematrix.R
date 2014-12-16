@@ -29,16 +29,18 @@
 #        so long as the matrix has not been reset
 #        with another call to FUNS$set
 #
-## makeCacheMatrix outputs four functions:
-#               1) set: sets the matrix in the environment 
-#                       of these functions 
+## makeCacheMatrix outputs a list of four functions:
+#               1) set: sets the matrix  
 #                       to that provided by the argument
-#               2) get: gets the matrix
-#               3) setinv: sets the inverse matrix in the evironemnt 
-#                       of these functions 
+#                       and caches the matrix in the environment
+#                       of the functions
+#               2) get: gets the cached matrix
+#               3) setinv: sets the inverse matrix
 #                       to that provided by the argument
+#                       and caches the inverse matrix in the environment
+#                       of the functions
 #               4) getinv: gets the inverse matrix
-# the matrix may be provided as an optional argument
+# the matrix itself is an optional argument (see above)
 #
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
